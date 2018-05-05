@@ -5,8 +5,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * The main class which runs the main functionality of the program.
+ * @author juliansmithdeniro
+ * @version 1.0
+ */
 public class Main {
 	
+	/**
+	 * A function which creates the Person objects to be stored in the community BST from the community input file.
+	 * @param communityFile Is one of the input files feeding info on each Person in the community.
+	 * @return An ArrayList<Person> of each Person object created from the file.
+	 */
 	private static ArrayList<Person> getPersonObjects(String communityFile) {
 		
 		ArrayList<Person> people = new ArrayList<Person>();
@@ -82,6 +92,12 @@ public class Main {
 		return people;
 	}
 	
+	/**
+	 * Retrieves the queries from the input file.
+	 * @param queryFile A text file which prompts the program to output specific information about
+	 * specific people in the community.
+	 * @return An ArrayList<String> of each query.
+	 */
 	private static ArrayList<String> getQueries(String queryFile) {
 
 		ArrayList<String> queryFileData = new ArrayList<String>();
@@ -108,6 +124,11 @@ public class Main {
 		
 	}
 
+	/**
+	 * The main function of the program.
+	 * @param args An array which holds the community file and query file (in that order) which is
+	 * used to simulate our community.
+	 */
 	public static void main(String[] args) {
 	
 		BST<Person, Integer> community = new BST<Person, Integer>();
@@ -289,7 +310,7 @@ public class Main {
 
 						currentMaxList = comparisonList;
 				}
-				System.out.print(
+				System.out.println(
 						"WHO-HAS-MOST-MUTUAL-FRIENDS:" + currentMax.getFirstName() + 
 						" " + currentMax.getLastName());
 			}
